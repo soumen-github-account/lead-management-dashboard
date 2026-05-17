@@ -176,20 +176,18 @@ const LoginPage = () => {
 
         {/* CONTENT */}
         <div className="relative z-10">
-
-          <div
-            className="
-              w-16 h-16
-              rounded-3xl
-              bg-white/10
-              backdrop-blur-xl
-              flex items-center justify-center
-              mb-8
-            "
-          >
-            <ShieldCheck size={32} />
-          </div>
-
+            <div
+              className="
+                w-16 h-16
+                rounded-3xl
+                bg-white/10
+                backdrop-blur-xl
+                flex items-center justify-center
+                mb-8
+              "
+            >
+              <ShieldCheck size={32} />
+            </div>
           <h1
             className="
               text-6xl
@@ -198,7 +196,7 @@ const LoginPage = () => {
               tracking-tight
             "
           >
-            Smart Leads
+            GigFlow - Smart Leads Dashboard
           </h1>
 
           <p
@@ -309,7 +307,7 @@ const LoginPage = () => {
             "
           >
 
-            <div className="mb-8">
+            <div className="mb-8 dark:text-zinc-200">
 
               <h2 className="text-4xl font-bold tracking-tight">
                 Welcome Back
@@ -329,7 +327,7 @@ const LoginPage = () => {
                 )
               }
 
-              className="space-y-5"
+              className="space-y-5 dark:text-zinc-200"
             >
 
               {/* EMAIL */}
@@ -354,7 +352,7 @@ const LoginPage = () => {
                   <input
                     type="email"
 
-                    placeholder="john@gmail.com"
+                    placeholder="admin@gmail.com"
 
                     {...register(
                       "email"
@@ -397,7 +395,7 @@ const LoginPage = () => {
                   <input
                     type="password"
 
-                    placeholder="••••••••"
+                    placeholder="admin1234"
 
                     {...register(
                       "password"

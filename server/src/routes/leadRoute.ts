@@ -12,6 +12,6 @@ router.get("/users", protect, getUsers);
 router.get("/get-all-users", protect, getAllUsers);
 
 router.delete("/:id", protect, authorizeRoles("admin"), deleteLead);
-router.get("/export/csv", protect, exportLeadsCSV)
+router.get("/export/csv", exportLeadsCSV)
 
 export default router

@@ -122,6 +122,9 @@ const LeadsPage = () => {
     }
   };
 
+  const backendUrl = import.meta.env.VITE_BACKEND_URL;
+
+
   return (
     <DashboardLayout>
       <div className="space-y-8">
@@ -150,7 +153,7 @@ const LeadsPage = () => {
             <button
               onClick={() =>
                 window.open(
-                  "http://localhost:5000/api/leads/export/csv",
+                  `${backendUrl}/api/leads/export/csv`,
                   "_blank"
                 )
               }

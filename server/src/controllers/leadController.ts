@@ -4,6 +4,7 @@ import type { AuthRequest } from "../types/express.js";
 import type { Response } from "express";
 import { createLeadSchema } from "../validators/leadValidator.js";
 import { createObjectCsvWriter } from "csv-writer";
+import { Parser } from "json2csv";
 
 import path from "path";
 import User from "../models/UserModel.js";
@@ -184,32 +185,26 @@ export const deleteLead = async(req: AuthRequest, res: Response) => {
 
 
 
-export const exportLeadsCSV = async(req: AuthRequest, res: Response) => {
-    try {
-        const leads = await Lead.find({isDeleted: false})
+export const exportLeadsCSV = async (req: AuthRequest, res: Response) => {
+  try {
+    const leads = await Lead.find({ isDeleted: false }).lean();
 
-        const csvWriter = createObjectCsvWriter({
-            path: path.join(__dirname, "../../leads.csv"),
+    const fields = ["name", "email", "status", "source"];
+    const parser = new Parser({ fields });
 
-            header: [
-                { id: "name", title: "NAME" },
+    const csv = parser.parse(leads);
 
-                { id: "email", title: "EMAIL" },
+    res.header("Content-Type", "text/csv");
+    res.attachment("leads.csv");
 
-                { id: "status", title: "STATUS" },
-
-                { id: "source", title: "SOURCE" },
-            ],
-        })
-        await csvWriter.writeRecords(leads);
-        res.download("leads.csv");
-    } catch (error) {
-        res.status(500).json({
-            success: false,
-            message: "CSV Export Failed",
-        });
-    }
-}
+    return res.send(csv);
+  } catch (error) {
+    return res.status(500).json({
+      success: false,
+      message: "CSV Export Failed",
+    });
+  }
+};
 
 export const getUsers = async (
   req: AuthRequest,

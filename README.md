@@ -6,7 +6,7 @@
 
 ## Overview
 
-**LeadFlow** is a scalable **MERN stack SaaS-style dashboard** that simplifies lead tracking and management. It provides a centralized system for handling leads, improving sales workflows, and enabling data-driven decisions through a clean analytics interface.
+**GigFlow** is a scalable **MERN stack SaaS-style dashboard** that simplifies lead tracking and management. It provides a centralized system for handling leads, improving sales workflows, and enabling data-driven decisions through a clean analytics interface.
 
 Built with **TypeScript, React, Node.js, and MongoDB**, the system is optimized for performance, maintainability, and real-world business use cases.
 
@@ -43,7 +43,7 @@ Built with **TypeScript, React, Node.js, and MongoDB**, the system is optimized 
 
 ---
 
-## Architecture
+### Architecture
 
 Frontend (React + Vite + Redux)
 ↕
@@ -81,11 +81,14 @@ Database (MongoDB + Mongoose)
 ```bash
 git clone https://github.com/soumen-github-account/lead-management-dashboard.git
 cd lead-management-dashboard
+```
 
-### Backend Setup
+### 2. Backend Setup
 
+```bash
 cd server
 npm install
+```
 
 ### Create .env file:
 PORT=5000
@@ -96,13 +99,13 @@ JWT_SECRET=your_jwt_secret
 npm run dev
 
 ### 3. Frontend Setup
-
+```bash
 cd client
 npm install
 npm run dev 
 ```
 
-### API  Overview
+## API  Overview
 
 Auth
 Method	Endpoint	        Description

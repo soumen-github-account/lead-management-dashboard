@@ -20,6 +20,10 @@ const leadSchema = new mongoose.Schema<ILead>({
         type: mongoose.Schema.Types.ObjectId,
         ref: "Users"
     },
+    leaderId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Users",
+    },
     isDeleted: {
         type: Boolean,
         default: false

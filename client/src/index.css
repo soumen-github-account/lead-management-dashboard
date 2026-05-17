@@ -5,3 +5,9 @@ body {
   font-family: sans-serif;
 }
 @custom-variant dark (&:where(.dark, .dark *));
+
+*{
+  overflow: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}

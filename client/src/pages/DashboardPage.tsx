@@ -100,16 +100,25 @@ const DashboardPage = () => {
                 <p className="text-zinc-500 dark:text-zinc-400 mt-1">Distribution overview</p>
               </div>
             </div>
-            <ResponsiveContainer width="100%" height={320}>
-              <PieChart>
-                <Pie data={chartData} dataKey="value" outerRadius={110} innerRadius={70} paddingAngle={4} label>
-                  {chartData.map((_, index) => (
-                    <Cell key={index} fill={COLORS[index % COLORS.length]} />
-                  ))}
-                </Pie>
-                <Tooltip />
-              </PieChart>
-            </ResponsiveContainer>
+            <div className="... h-[300px]">
+              <ResponsiveContainer width="100%" height="100%">
+                <PieChart>
+                  <Pie
+                    data={chartData}
+                    dataKey="value"
+                    outerRadius={100}
+                    innerRadius={60}
+                    paddingAngle={4}
+                    label
+                  >
+                    {chartData.map((_, index) => (
+                      <Cell key={index} fill={COLORS[index % COLORS.length]} />
+                    ))}
+                  </Pie>
+                  <Tooltip />
+                </PieChart>
+              </ResponsiveContainer>
+            </div>
           </div>
 
           <div className="bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-3xl p-6 shadow-sm">

@@ -91,10 +91,12 @@ npm install
 ```
 
 ### Create .env file:
+
+```bash
 PORT=5000
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret
-
+```
 ### Run server:
 npm run dev
 
@@ -106,23 +108,34 @@ npm run dev
 ```
 
 ## API  Overview
+##  API Overview
 
-Auth
-Method	Endpoint	        Description
-POST	/api/auth/register	Register user
-POST	/api/auth/login	    Login user
+###  Auth
 
-Leads
-Method	Endpoint	Description
-GET	    /api/leads	Get all leads
-POST	/api/leads	Create lead
-PUT	   /api/leads/:id	Update lead
-DELETE	/api/leads/:id	Delete lead
+| Method | Endpoint              | Description      |
+|--------|----------------------|------------------|
+| POST   | /api/auth/register   | Register user    |
+| POST   | /api/auth/login      | Login user       |
 
-Export
-Method	Endpoint	            Description
-GET	   /api/leads/export/csv	Export leads CSV
+---
 
+###  Leads
+
+| Method | Endpoint           | Description        |
+|--------|--------------------|--------------------|
+| GET    | /api/leads         | Get all leads      |
+| POST   | /api/leads         | Create lead        |
+| PUT    | /api/leads/:id     | Update lead        |
+| DELETE | /api/leads/:id     | Delete lead        |
+
+---
+
+###  Export
+
+| Method | Endpoint                  | Description        |
+|--------|---------------------------|--------------------|
+| GET    | /api/leads/export/csv     | Export leads CSV   |
+---
 ### Security Model
 - JWT authentication for API access
 - Middleware-protected routes
@@ -146,9 +159,9 @@ GitHub: https://github.com/soumen-github-account
 
 If you like this project:
 
-⭐ Star the repository
-🍴 Fork it
-🛠️ Contribute improvements
-🧠 Notes
+⭐ Star the repository |
+🍴 Fork it |
+🛠️ Contribute improvements |
+🧠 Notes |
 
 This project is built as a full-stack internship-level production simulation, focusing on real-world architecture, scalability, and maintainability.

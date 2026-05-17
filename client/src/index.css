@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+body {
+  background: #f5f7fb;
+  font-family: sans-serif;
+}
+@custom-variant dark (&:where(.dark, .dark *));
